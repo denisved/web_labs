@@ -1,0 +1,52 @@
+body {
+    font-family: "Mulish", sans-serif;
+    color: #233348;
+}
+
+a {
+    text-decoration: none;
+    color:#1F1534;
+}
+
+li {
+    display: block 
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.default__button {
+    color:#458FF6;
+    background: #FFFFFF;
+    border: 1.4px solid #458FF6;
+    box-sizing: border-box;
+    border-radius: 55px;  
+    width: 200px;
+    height: 54.83px;
+    font-weight: bold;
+    cursor: pointer;   
+}
+
+
+tr {
+    background-color: #fff;
+    height: 354px;
+    /* drop shadow */
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+}
+
+td {
+    background-color: #fff;
+    width: 350px;
+    height: 354px;
+    /* drop shadow */
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+}
