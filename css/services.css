@@ -76,3 +76,49 @@
     display: block;
     margin-bottom: 100px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .table__paragraph{
+        width: 180px;
+    }
+
+    .services__paragraph{
+        padding-top: 0px;
+        width: 310px;
+        height: 96px;
+        font-size: 16px;
+        padding-left: 1 5px;
+    }
+
+    .services__line{
+        margin-left: 140px;
+        margin-bottom: 20px;
+    }
+
+    .services__title{
+        margin-left: 30px;
+    }
+
+    td {
+        display: block;
+        width: 260px;
+        margin-top: 30px;
+    }
+
+    .services{
+        width: 300px;
+        background: none;
+    }
+
+    .services__table{
+        background-image: url(../images/services_elements.svg);
+        width: 300px;
+        table-layout: fixed;
+    }
+    
+    .services__button{
+        margin-left: 67px;
+        margin-bottom: 0;
+    }
+}

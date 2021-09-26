@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Lab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <title>Second Lab</title>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -12,17 +12,20 @@
     <section class="header">
         <div class="container header__container">
             <header class="header__content">
+                <div class="header__menu" onclick="toggleMenu()">
+                    <img src="images/menu-icon.svg" alt="Menu icon">
+                  </div>
                 <div class="header__logo">
                     <span class="header__logo-t-circle">T</span>
                     <div class="header__logo-text">Trafalgar</div>
                 </div>
-                <nav class="header__nav">
+                <nav id="nav-links" class="header__nav">
                     <ul>
-                        <li class="header__nav-item-home"><a href="">Home</a></li>
-                        <li class="header__nav-item"><a href="">Find a doctor</a></li>
-                        <li class="header__nav-item"><a href="">Apps</a></li>
-                        <li class="header__nav-item"><a href="">Testimonials</a></li>
-                        <li class="header__nav-item"><a href="">About us</a></li>
+                        <li class="header__nav-item-home"><a class="heaader__nav-link" href="">Home</a></li>
+                        <li class="header__nav-item"><a class="heaader__nav-link" href="">Find a doctor</a></li>
+                        <li class="header__nav-item"><a class="heaader__nav-link" href="">Apps</a></li>
+                        <li class="header__nav-item"><a class="heaader__nav-link" href="">Testimonials</a></li>
+                        <li class="header__nav-item"><a class="heaader__nav-link"    href="">About us</a></li>
                     </ul>
                 </nav>
             </header>
@@ -54,7 +57,7 @@
         </div>
     </section>
 
-    <section class="services">
+ <section class="services">
         <div class="container services__container">
             <div class="services__content">
                 <h1 class="services__title">Our services</h1>
@@ -144,5 +147,7 @@
         </div>
     </section>
 </section>
+<script src="js/main.js"></script>
 </body>
 </html>
+

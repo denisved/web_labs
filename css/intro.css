@@ -38,3 +38,66 @@
 .intro__content{
     padding-left: 142px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .intro {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .intro__title {
+        margin: auto;
+    }
+
+    .intro__line{
+        position: relative;
+        margin: auto;
+    }
+    .intro__paragraph {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .intro__illustration {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .intro__title{
+       padding-left: 0px;
+       width: 310px;
+       height: 170px;
+       margin: 0 auto;
+       padding-bottom: 50px;
+       font-size: 50px;
+    }
+
+    .intro__paragraph{
+       padding-top: 0px;
+       width: 310px;
+       height: 96px;
+       font-size: 16px;
+    }
+
+    .intro__content{
+       padding-left: 0;
+       width: 100%;
+    }
+
+    .intro__container{
+        padding-top: 0;
+    }
+    
+    .intro__line{
+        display: none;
+    }
+
+    .intro__button{
+        margin-top: 80px;
+    }
+
+
+}
