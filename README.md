@@ -1,13 +1,12 @@
 # CRUD Javascript App: View Page
-Description: In this work, you have to make a simple presentation part of a website - View Page (You can find the template of the page by following the link - https://wireframepro.mockflow.com/view/lviv-iot-crud-js-app
-Then using JavaScript, you need to implement the following operations on your data (it is up to you to decide which field should be used for each of the operations):
+<h1>Description:</h1> 
 
-●	Sort of your items option
+In this work, you need to continue working and add two new parts to your website - Create & Edit Pages 
 
-●	Search option 
+Update/Delete operations are not required for this work!
 
-●	Count total amount of some of the field 
-(e.g total price of all cars)
+Also you must validate the forms using HTML attributes (inputs must be configured for your data format).
+If incorrect data is entered in the inputs, you must use JavaScript to inform the user with modal windows or just plain alert() function.
 
 <h1>Requirements:</h1>
 
