@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>3 lab</title>
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <header>My cars</header>
+      </div>
+
+    <section class = "container container__hero">  
+      
+      <div class="main__content">
+        <div class="create__content">
+          <h1>Create car</h1>
+
+          <h2>Title:</h2>
+          <input type="text" id="title_input" required>
+            <span class="error" id="errorTitle"></span>
+
+          <h2>Description:</h2>
+          <input type="text" id="description_input">
+
+          <h2>Price in dollars:</h2>
+          <input type="text" id="price_input" required>
+            <span class="error" id="errorPrice"></span>
+          <button class="default__button" id="submit_button">Submit</button>
+        </div>
+
+        <div class="search__content">
+          <h1>Find car</h1>
+          <input type="text" id="find_input">
+
+            <div class="buttons">
+              <button class="default__button" id="find_button">Find</button>
+              <button class="cancel__button" id="cancel_find_button">Cancel</button>  
+            </div>
+
+            <div class="sort_n_amount">
+              <button class="default__button" id="sort_button">Sort</button>
+              <button class="default__button" id="total_amount_button">Total amount</button>
+            </div>
+
+        </div>
+      </div>
+
+      <div class="items_list">
+        <ul id="items_container" class="items_container"></ul>
+    </div>
+    </section>
+    
+
+      <script type="module" src="./js/index.js"></script>
+    </body>
+    </html>
