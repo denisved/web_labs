@@ -12,9 +12,11 @@ const cancelFindButton = document.getElementById('cancel_find_button');
 const sortButton = document.getElementById('sort_button');
 const totalButton = document.getElementById('total_amount_button');
 const titleInput = document.getElementById('title_input');
+const descriptionInput = document.getElementById('description_input')
 const priceInput = document.getElementById('price_input');
-const errorTitle = document.getElementById("errorTitle");
-const errorPrice = document.getElementById("errorPrice");
+const errorTitle = document.getElementById("error_title");
+const errorPrice = document.getElementById("error_price");
+const errorDescription = document.getElementById("error_description");
 
 const items = [];
 
@@ -48,6 +50,10 @@ submitButton.addEventListener("click", (event) => {
     else if(invalidSymbols.some(symbol =>titleInput.value.includes(symbol))){
         errorTitle.textContent = "Wrong symbols";
         window.alert("Oops, something went wrong");
+    }
+    else if(descriptionInput.value == 0){
+        errorDescription.textContent = "Please enter a description";
+        window.alert("We need to know the description of the car!");
     }
     else if(priceInput.value == 0){
         errorPrice.textContent = "Please enter a price";
