@@ -1,6 +1,8 @@
+import { getAllCars, postCar, deleteCar, editCar } from "./api.js";
 import {
-    addItemToPage,
     clearInputs,
+    DELETE_BUTTON_PREFIX,
+    EDIT_BUTTON_PREFIX,
     getInputValues, 
     renderItemList
 } from "./dom_util.js";
@@ -18,23 +20,29 @@ const errorTitle = document.getElementById("error_title");
 const errorPrice = document.getElementById("error_price");
 const errorDescription = document.getElementById("error_description");
 
-const items = [];
+let items = [];
 
+const onEditItem = (element) => {
+    const id = element.target.id.replace(EDIT_BUTTON_PREFIX, '');
+    const { title, description, price } = getInputValues();
+    clearInputs();
 
-const addItem = ({title, description, price}) => {
-    const generatedId = uuid.v1();
+    editCar(id, { title, description, price }).then(refetchAllCars);
 
-    const newItem = {
-        id: generatedId,
-        title,
-        description,
-        price
-    };
-
-    items.push(newItem);
-
-    addItemToPage(newItem);
 }
+
+const onDeleteItem = (element) => {
+    const id = element.target.id.replace(DELETE_BUTTON_PREFIX, '');
+    deleteCar(id).then(refetchAllCars);
+}
+
+const refetchAllCars = async () => {
+    const allCars = await getAllCars();
+
+    items = allCars;
+
+    renderItemList(items, onEditItem, onDeleteItem);
+} 
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -72,11 +80,11 @@ submitButton.addEventListener("click", (event) => {
 
     clearInputs();
 
-    addItem({
-        title,
+    postCar({
         description,
+        title,
         price
-    })
+    }).then(refetchAllCars);
 
     errorPrice.textContent = "";
     errorTitle.textContent = "";
@@ -86,11 +94,11 @@ submitButton.addEventListener("click", (event) => {
 findButton.addEventListener("click", ()=>{
     const foundItems = items.filter((car) => car.title.search(findInput.value) !== -1);
 
-    renderItemList(foundItems);
+    renderItemList(foundItems, onEditItem, onDeleteItem);
 });
 
 cancelFindButton.addEventListener("click", ()=>{
-    renderItemList(items);
+    renderItemList(items, onEditItem, onDeleteItem);
 
     findInput.value = "";
 });
@@ -98,7 +106,7 @@ cancelFindButton.addEventListener("click", ()=>{
 sortButton.addEventListener("click", (event) => {
     event.preventDefault();
     items.sort((a, b) => (a.price-b.price));
-    renderItemList(items);
+    renderItemList(items, onEditItem, onDeleteItem);
 });
 
 
@@ -106,8 +114,11 @@ totalButton.addEventListener("click", (event) =>{
     event.preventDefault();
     
     const totalAmount = items.map(o => o.price).reduce((a,c) => {return parseInt(a) + parseInt(c)});
-    alert(totalAmount)
+    alert(totalAmount);
 });
 
 
-renderItemList(items);
+refetchAllCars();
+
+
+

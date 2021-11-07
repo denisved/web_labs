@@ -131,3 +131,9 @@ li {
     margin-top: 7px;
     color: red;
 }
+
+.inner_buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
